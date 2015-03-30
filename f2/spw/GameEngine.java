@@ -28,7 +28,7 @@ public class GameEngine implements KeyListener, GameReporter{
 		
 		gp.sprites.add(v);
 		
-		timer = new Timer(30, new ActionListener() {
+		timer = new Timer(28, new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -44,7 +44,7 @@ public class GameEngine implements KeyListener, GameReporter{
 	}
 	
 	private void generateEnemy(){
-		Enemy e = new Enemy((int)(Math.random()*390), 30);
+		Enemy e = new Enemy((int)(Math.random()*580), 10);
 		gp.sprites.add(e);
 		enemies.add(e);
 	}
@@ -62,7 +62,7 @@ public class GameEngine implements KeyListener, GameReporter{
 			if(!e.isAlive()){
 				e_iter.remove();
 				gp.sprites.remove(e);
-				score += 2000;
+				score += 5000;
 			}
 		}
 		
