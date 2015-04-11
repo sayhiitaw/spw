@@ -62,8 +62,7 @@ public class GameEngine implements KeyListener, GameReporter{
 			if(!e.isAlive()){
 				e_iter.remove();
 				gp.sprites.remove(e);
-           				die();
-				
+				score += 5000;
 			}
 		}
 		
@@ -74,9 +73,8 @@ public class GameEngine implements KeyListener, GameReporter{
 		for(Enemy e : enemies){
 			er = e.getRectangle();
 			if(er.intersects(vr)){
-				
-				score += 5000;
-				
+				die();
+				return;
 			}
 		}
 	}
