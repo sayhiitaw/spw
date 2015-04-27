@@ -29,7 +29,7 @@ public class GameEngine implements KeyListener, GameReporter{
 		
 		gp.sprites.add(v);
 		
-		timer = new Timer(28, new ActionListener() {
+		timer = new Timer(30, new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -45,7 +45,7 @@ public class GameEngine implements KeyListener, GameReporter{
 	}
 	
 	private void generateEnemy(){
-		Enemy e = new Enemy((int)(Math.random()*580), 10);
+		Enemy e = new Enemy((int)(Math.random()*200), 10);
 		gp.sprites.add(e);
 		enemies.add(e);
 	}

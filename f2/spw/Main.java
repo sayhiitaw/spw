@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args){
 		JFrame frame = new JFrame("Space War");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(600, 675);
+		frame.setSize(425, 700);
 		frame.getContentPane().setLayout(new BorderLayout());
 		
 		SpaceShip v = new SpaceShip(180, 600, 180, 20);

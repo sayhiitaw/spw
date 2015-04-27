@@ -15,16 +15,16 @@ public class GamePanel extends JPanel {
 	ArrayList<Sprite> sprites = new ArrayList<Sprite>();
 
 	public GamePanel() {
-		bi = new BufferedImage(600, 650, BufferedImage.TYPE_INT_ARGB);
+		bi = new BufferedImage(425, 700, BufferedImage.TYPE_INT_ARGB);
 		big = (Graphics2D) bi.getGraphics();
 		big.setBackground(Color.WHITE);
 	}
 
 	public void updateGameUI(GameReporter reporter){
-		big.clearRect(0, 0, 600, 650);
+		big.clearRect(0, 0, 425, 700);
 		
 		big.setColor(Color.GRAY);		
-		big.drawString(String.format("%08d", reporter.getScore()), 500,30);
+		big.drawString(String.format("%08d", reporter.getScore()), 330,25);
 		for(Sprite s : sprites){
 			s.draw(big);
 		}
