@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 
 public class SpaceShip extends Sprite{
 
-	int step = 12;
+	int step = 20;
 	BufferedImage kapook;
 	
 	public SpaceShip(int x, int y, int width, int height) {

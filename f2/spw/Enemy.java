@@ -11,18 +11,18 @@ import javax.imageio.ImageIO;
 
 public class Enemy extends Sprite{
 	public static final int Y_TO_FADE = 390;
-	public static final int Y_TO_DIE = 750;
+	public static final int Y_TO_DIE = 650;
 	
-	private int step =20;
+	private int step = 20;
 	private boolean alive = true;
 
-	BufferedImage ham;
+	BufferedImage coin;
 	
 	public Enemy(int x, int y) {
 		super(x, y, 40, 40);
 
 			try{
-			ham = ImageIO.read(new File("f2/image/hammer.png"));
+			coin = ImageIO.read(new File("f2/image/glow.png"));
 		}
 		catch(IOException e){
 
@@ -38,7 +38,7 @@ public class Enemy extends Sprite{
 					(float)(Y_TO_DIE - y)/(Y_TO_DIE - Y_TO_FADE)));
 		}
 
-		g.drawImage(ham, x, y, width, height, null);
+		g.drawImage(coin, x, y, width, height, null);
 		//g.fillRect(x, y, width, height);
 		
 	}
@@ -52,5 +52,9 @@ public class Enemy extends Sprite{
 	
 	public boolean isAlive(){
 		return alive;
+	}
+
+	public boolean noAlive(){
+		return alive = false;
 	}
 }
