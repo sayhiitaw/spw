@@ -3,10 +3,7 @@ package f2.spw;
 import java.awt.BorderLayout;
 
 import javax.swing.*;
-import sun.audio.*;
 import java.io.*;
-import java.applet.Applet;
-import java.applet.AudioClip;
 
 import javax.swing.JFrame;
 

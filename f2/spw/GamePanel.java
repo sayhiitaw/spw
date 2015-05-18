@@ -24,6 +24,7 @@ public class GamePanel extends JPanel {
 	BufferedImage HR;
 	BufferedImage BN;
 	BufferedImage OV;
+	BufferedImage FI;
 
 	int fontSize1 = 25;
 	int fontSize2 = 20;
@@ -59,6 +60,13 @@ public class GamePanel extends JPanel {
 		catch(IOException e){
 
 		}
+
+		try{
+			FI = ImageIO.read(new File("f2/image/final.png"));
+		}
+		catch(IOException e){
+
+		}
 	}
 
 	public void updateGameUI(GameReporter reporter){
@@ -70,36 +78,17 @@ public class GamePanel extends JPanel {
 		big.drawImage(BG, 0, 0, 425, 750, null);	
 		big.drawString(String.format("score: %08d", reporter.getScore()), 280,30);
 		
-		if(reporter.getHeart() == 5){
-			big.drawImage(HR, 10, 15, 25, 25, null);
-			big.drawImage(HR, 40, 15, 25, 25, null);
-			big.drawImage(HR, 70, 15, 25, 25, null);
-			big.drawImage(HR, 100, 15, 25, 25, null);
-			big.drawImage(HR, 130, 15, 25, 25, null);
-		}else if(reporter.getHeart() == 4){
-			big.drawImage(HR, 10, 15, 25, 25, null);
-			big.drawImage(HR, 40, 15, 25, 25, null);
-			big.drawImage(HR, 70, 15, 25, 25, null);
-			big.drawImage(HR, 100, 15, 25, 25, null);
-		}else if(reporter.getHeart() == 3){
-			big.drawImage(HR, 10, 15, 25, 25, null);
-			big.drawImage(HR, 40, 15, 25, 25, null);
-			big.drawImage(HR, 70, 15, 25, 25, null);
-		}else if(reporter.getHeart() == 2){
-			big.drawImage(HR, 10, 15, 25, 25, null);
-			big.drawImage(HR, 40, 15, 25, 25, null);
-		}else if(reporter.getHeart() == 1){
-			big.drawImage(HR, 10, 15, 25, 25, null);
+		big.drawImage(HR, 10, 15, 25, 25, null);
+		big.drawString(String.format(" %d", reporter.getHeart()), 40,30);
+
+		if( reporter.getHeart() == 1){
 			big.drawImage(OV, 60, 300, 300, 60, null);
+			big.drawImage(FI, 65, 275, 80, 30, null);
 			big.setColor(Color.BLACK);
 			big.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, fontSize1));
 			big.drawString(String.format("Your Score: %08d", reporter.getScore()), 105,380);
-		}		
+		}	
 		
-		/*if(reporter.getBonus() == 1){
-			big.drawImage(BN, 0, 350, 350, 60, null);
-			}*/
-
 		for(Sprite s : sprites){
 			s.draw(big);
 		}
